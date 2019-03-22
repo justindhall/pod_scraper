@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     pod_scraper (0.1.0)
+      nokogiri
 
 GEM
   remote: https://rubygems.org/
@@ -21,7 +22,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
-  nokogiri
   pod_scraper!
   pry
   rake (~> 10.0)

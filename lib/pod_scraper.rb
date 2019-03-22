@@ -1,6 +1,7 @@
-require "pod_scraper/version"
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-module PodScraper
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "pod_scraper/version"
+require_relative './pod_scraper/cli'
+require_relative './pod_scraper/episode'
