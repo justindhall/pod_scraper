@@ -1,5 +1,5 @@
 class PodScraper::Episode
-  attr_accessor :title, :date, :summary
+  attr_accessor :title, :summary
 
   def self.all
     #Scrape Solid Verbal and then return pods based on that data
@@ -37,10 +37,15 @@ class PodScraper::Episode
 
   def self.scrape_solid
     doc = Nokogiri::HTML(open("https://www.solidverbal.com/all-posts/"))
-    titles = doc.search("h3.post-list-item-title").text
-    summaries = doc.search("p").text
+    pods = doc.css("content-main page-content")
 
-    binding.pry
+    pods.each do |pod|
+      episode = self.new
+      episode.title = doc.search("h3.post-list-item-title").text
+      episode.summary = doc.search("p").text
+      episode
+    end
+
   end
 
 end
