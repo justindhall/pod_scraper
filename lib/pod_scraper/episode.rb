@@ -37,6 +37,9 @@ class PodScraper::Episode
 
   def self.scrape_solid
     doc = Nokogiri::HTML(open("https://www.solidverbal.com/all-posts/"))
+    titles = doc.search("h3.post-list-item-title").text
+    summaries = doc.search("p").text
+
     binding.pry
   end
 
