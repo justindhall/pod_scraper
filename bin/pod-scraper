@@ -1,0 +1,3 @@
+#!/user/bin/env ruby
+
+PodScraper::CLI.new.call
