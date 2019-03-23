@@ -39,12 +39,12 @@ class PodScraper::Episode
     doc = Nokogiri::HTML(open("https://www.solidverbal.com/all-posts/"))
     pods = doc.css("content-main page-content")
 
-    pods.each do |pod|
+    #pods.each do |pod|
       episode = self.new
       episode.title = doc.search("h3.post-list-item-title").text
       episode.summary = doc.search("p").text
       episode
-    end
+    #end
 
   end
 
