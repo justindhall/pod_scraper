@@ -20,6 +20,10 @@ Or install it yourself as:
 
     $ gem install pod_scraper
 
+## Usage
+
+From the main directory file, run ```ruby bin/pod-scraper``` to execute the program
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
