@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Justin Hall'"]
   spec.email         = ["'hall.justin.d@gmail.com'"]
 
-  spec.summary       = %q{Scrapes for the lastest episodes of the ------ Podcast}
+  spec.summary       = "Scrapes for the lastest episodes of The Solid Verbal Podcast"
   spec.homepage      = "https://github.com/justindhall/pod_scraper"
   spec.license       = "MIT"
 
@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir        = "bin"
+  spec.executables   = ["pod-scraper"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.0"
