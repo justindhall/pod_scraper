@@ -10,8 +10,8 @@ class PodScraper::CLI
   def lists_pods
     puts "Recent pods: "
     @pods = PodScraper::Episode.scrape_solid
-    @pods.each.with_index(1) do |pod, i|
-      puts "#{i}. #{pod.title} - #{pod.summary}"
+    @pods.each_with_index do |pod, i|
+      puts "#{i+1}. #{pod.title} - #{pod.summary}"
     end
   end
 

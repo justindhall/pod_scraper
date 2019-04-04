@@ -36,17 +36,18 @@ class PodScraper::Episode
   end
 
   def self.scrape_solid
-    episodes = []
 
     doc = Nokogiri::HTML(open("https://www.solidverbal.com/all-posts/"))
     #pods = doc.css("container post-content post-list")
-
-    doc.css("div.container.post-content.post-list").each do |pod|
+  
+    doc.css(".post-list-item").map do |pod|
+      #binding.pry
       episode = PodScraper::Episode.new
       episode.title = pod.css("h3.post-list-item-title").text
       episode.summary = pod.css("p").text
       episode.publish_date = pod.css("post-list-item-meta").text
-      episodes << episode
+      episode
+      
     end
   end
 
