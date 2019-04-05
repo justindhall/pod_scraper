@@ -22,13 +22,13 @@ class PodScraper::CLI
       puts "Enter the number of the pod you want more info on or type 'list' to see the pods again or type 'exit' to exit: "
       input = gets.strip.downcase
 
-      if input.to_i > 0 && input.to_i < @pods.length
+      if input.to_i > 0 && input.to_i < @pods.length + 1
         the_pod = @pods[input.to_i-1]
         puts "#{the_pod.title} - #{the_pod.summary}"
       elsif input == "list"
         lists_pods
       else
-        "I'm unsure what you meant. Please enter a valid input."
+        puts "I'm unsure what you meant. Please enter a valid input."
       end
     end
   end
