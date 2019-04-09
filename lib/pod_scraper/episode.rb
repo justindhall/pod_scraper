@@ -17,7 +17,7 @@ class PodScraper::Episode
       episode = PodScraper::Episode.new
       episode.title = pod.css("h3.post-list-item-title").text
       episode.summary = pod.css("p").text
-      episode.publish_date = pod.css("post-list-item-meta").text
+      episode.publish_date = pod.css(".post-list-item-meta").text
       episode
 
     end

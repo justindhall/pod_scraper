@@ -11,7 +11,7 @@ class PodScraper::CLI
     puts "Recent pods: "
     @pods = PodScraper::Episode.all
     @pods.each_with_index do |pod, i|
-      puts "#{i+1}. #{pod.title} - #{pod.summary}"
+      puts "#{i+1}. #{pod.title} - #{pod.publish_date} - #{pod.summary}"
       puts
     end
   end
@@ -25,7 +25,7 @@ class PodScraper::CLI
 
       if input.to_i > 0 && input.to_i < @pods.length + 1
         the_pod = @pods[input.to_i-1]
-        puts "#{the_pod.title} - #{the_pod.summary}"
+        puts "#{the_pod.title} - #{pod.publish_date} - #{the_pod.summary}"
       elsif input == "list"
         lists_pods
       elsif input == "exit"
