@@ -6,19 +6,13 @@ This gem allows a user to view information about the latest episodes of The Soli
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone this repo to your machine by clipping the address above and using:
 
-```ruby
-gem 'pod_scraper'
-```
+```git clone [address]```
 
-And then execute:
+Enter the directory with:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install pod_scraper
+```cd pod_scraper```
 
 ## Usage
 
