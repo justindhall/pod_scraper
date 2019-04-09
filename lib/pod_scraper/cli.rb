@@ -12,6 +12,7 @@ class PodScraper::CLI
     @pods = PodScraper::Episode.all
     @pods.each_with_index do |pod, i|
       puts "#{i+1}. #{pod.title} - #{pod.summary}"
+      puts
     end
   end
 
@@ -27,8 +28,11 @@ class PodScraper::CLI
         puts "#{the_pod.title} - #{the_pod.summary}"
       elsif input == "list"
         lists_pods
+      elsif input == "exit"
+        break
       else
         puts "I'm unsure what you meant. Please enter a valid input."
+        puts
       end
     end
   end
