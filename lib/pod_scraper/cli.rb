@@ -9,6 +9,7 @@ class PodScraper::CLI
 
   def lists_pods
     puts "Recent pods: "
+    PodScraper::Episode.scrape_solid
     @pods = PodScraper::Episode.all
     @pods.each_with_index do |pod, i|
       puts "#{i+1}. #{pod.title} - #{pod.publish_date}"
